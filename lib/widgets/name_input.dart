@@ -62,39 +62,32 @@ class _MyNameContainerState extends State<MyNameContainer> {
                     controller: nameController,
                 ),
               ),
-              SizedBox(
-                  height:500
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.amber)
-                      ),
-                        onPressed: () {
-                          if(_formkey.currentState!.validate()) {
-                            nextStep(context);
-                          } else {
-                            null;
-                          }
-                        },
-                        child: Text(
-                          "Next",
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w300
-                          ),
-                        )
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.amber)
                     ),
+                      onPressed: () {
+                        if(_formkey.currentState!.validate()) {
+                          nextStep(context);
+                        } else {
+                          null;
+                        }
+                      },
+                      child: Text(
+                        "Next",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w300
+                        ),
+                      )
                   ),
                 ),
-              ),
-              SizedBox(
-                  height:200
               ),
             ],
           ),
